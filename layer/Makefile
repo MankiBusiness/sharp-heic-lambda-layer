@@ -8,6 +8,7 @@ SHARP_VERSION=0.27.0
 PREFIX_PATH=/opt
 
 export PKG_CONFIG_PATH=$(PREFIX_PATH)/lib/pkgconfig
+export MAKEFLAGS+='-j$(nproc)'
 
 build-SharpHEICLayer: libvips
 	mkdir -p "$(ARTIFACTS_DIR)/nodejs"
